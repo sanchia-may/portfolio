@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SMB | PORTFOLIO</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" media="screen and (max-width:800px)" href="tablet.css">
+	<link rel="stylesheet" media="screen and (max-width:530px)" href="phone.css">
+</head>
+<body>
+	<nav class="navbar">
+		<ul>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#about">About</a></li>
+			<li><a href="#portfolio">Portfolio</a></li>
+			<li><a href="#services">Services</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</nav>
+
+	<section id="home">
+		<div class="main">
+			<h1 class="headings">Hello! I'm Sanchia Batica <br> your web designer | developer <br> based in the Philippines.</h1>
+			<button class="btn">
+				Hire Me
+			</button>
+		</div>
+	</section>
+
+	<section id="about">
+		<h1 class="headings">ABOUT ME</h1>
+		<div id="pic">
+			<img src="images/me.jpg" alt="">
+			<div id="intro">
+				<h2>SANCHIA MAY BATICA <br> Web Designer/Developer</h2>
+				<p>Hi! It is me Sanchia. I am currently pursuing my dream to become a Successful Web Designer/Developer. That is why I am looking for a job right now which can boost my skills and knowledge. I am a Degree Holder (Bachelor of Science in Information Tehnology) from a well-known University in Leyte. I am a self-taught web designer/developer. I am always active and available. I am hoping that I can get my very first job as a Web Designer/Developer. I am thirsty for knowledge and I am very much willing to be trained.</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="portfolio">
+		<h1 class="headings">PORTFOLIO</h1>
+		<div class="row">
+  <div class="column">
+    <img src="portfolio/login.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="portfolio/foodhubby.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+<div class="column">
+    <img src="portfolio/shoe.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+</div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1/3</div>
+      <img src="portfolio/login.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2/3</div>
+      <img src="portfolio/foodhubby.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3/3</div>
+      <img src="portfolio/shoe.png" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="portfolio/login.png" style="width:100%" onclick="currentSlide(1)" alt="Login Page using Adobe XD">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="portfolio/foodhubby.jpg" style="width:100%" onclick="currentSlide(1)" alt="Sample Food Ordering System">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="portfolio/shoe.png" style="width:100%" onclick="currentSlide(4)" alt="Sample Ecommerce Shoe Site Using Adobe XD">
+    </div>
+  </div>
+</div>
+	</section>
+
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+	<section id="services">
+		<h1 class="headings">SERVICES</h1>
+		<div class="row">
+			<div class="box">
+				<img src="services/design.png" alt="">
+				<h1 class="headings">Website <br> Design</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+			</div>
+			<div class="box">
+				<img src="services/coding.png" alt="">
+				<h1 class="headings">Web <br> Development</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+			</div>
+			<div class="box">
+				<img src="services/uxui.png" alt="">
+				<h1 class="headings">UX/UI <br> Design</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+			</div>
+
+		</div>
+	</section>
+
+	<section id="contact">
+		<h1 class="headings">CONTACT</h1>
+		<form action="" class="form">
+			<input type="text" name="name" class="input" placeholder="Enter Your Name">
+			<input type="email" name="email" class="input" placeholder="Enter Your Email">
+			<textarea name="msg" id="msg" cols="30" rows="10" placeholder="Enter your Message"></textarea>
+			<input type="submit" value="SEND" id="send">
+		</form>
+	</section>
+</body>
+</html>
